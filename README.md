@@ -5,3 +5,13 @@
 3. Explore NPM packages
 4. Build a Event Emitter (event logger)
 5. Build Web Server with Pure Node JS (No Express)
+6. Using ExpressJS to build a web server
+7. ExpressJS Middleware
+   There are 3 types of middleware
+
+- BUILT-IN middleware
+- CUSTOM middleware (we build ourself)
+- Middleware from 3rd party libraries
+
+* `app.use` - for middleware, does not accept regex in the `path`
+* `app.all` - does accept regex in the `path`, for handle all route
