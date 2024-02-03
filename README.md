@@ -27,3 +27,6 @@
 9. MVC REST APi
 
 10. Authentication
+    Requires 2 routes
+    - One for registration
+    - One for authorize the user after user created an account
