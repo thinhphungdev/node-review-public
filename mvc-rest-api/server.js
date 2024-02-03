@@ -25,7 +25,9 @@ app.use(express.json());
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/root'));
-app.use('/employees', require('./api/employee'));
+app.use('/', require('./routes/register'));
+app.use('/employees', require('./routes/api/employee'));
+app.use('/register', require('./routes/register'));
 
 app.all('/*', (req, res) => {
   res.status(404);
