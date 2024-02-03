@@ -42,3 +42,16 @@
 20240202	14:27:45	32d09d86-b369-4bb8-83f6-64ae5e15b766	GET	undefined	/employees
 20240202	14:30:14	935950cb-b39f-4b50-8930-39685adc4b98	POST	undefined	/employees
 20240202	14:33:23	2ab9bc9d-a995-4a10-9ebe-cbb6af76439c	GET	undefined	/employees/123
+20240203	11:57:53	4a3eeed2-9825-497e-b8f1-4837699f65dc	GET	undefined	/employees
+20240203	11:57:58	8287f772-15c2-462f-a708-688a86c02d7e	GET	undefined	/employees/1
+20240203	11:58:11	aa186351-3801-4bee-82e6-e8e8284039b0	GET	undefined	/employees/
+20240203	12:01:29	474d4bda-fad4-4897-9087-e19fe92955f2	GET	undefined	/employees/1
+20240203	12:01:55	37ac8fc2-740b-4c20-b683-a8d56e06db1b	GET	undefined	/employees/1
+20240203	12:02:34	34bbea69-1e6a-452d-bc1e-fddb2e76000b	GET	undefined	/employees/1
+20240203	12:02:57	29ea4497-b45d-4ea1-8518-e07108560d9a	GET	undefined	/employees/1
+20240203	12:03:11	df4c91b6-b273-47d7-8994-436d86de2198	GET	undefined	/employees/1
+20240203	12:04:09	34d42bd9-b3d7-4dcd-bcdc-0feddb4fa16d	GET	undefined	/employees/1
+20240203	12:04:30	19c47e4d-c66c-48e0-8787-5271ffa7700f	GET	undefined	/employees
+20240203	12:04:57	892642fd-1e23-41c0-80eb-f5d9ee8c2b89	GET	undefined	/employees/1
+20240203	12:05:38	5738e459-d032-4805-97af-e462b7d07dc6	POST	undefined	/employees
+20240203	12:06:23	9ab612cd-717e-4afe-b03a-b6100b6fc4e1	POST	undefined	/employees

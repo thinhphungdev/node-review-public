@@ -12,11 +12,11 @@ function getAllEmployees(req, res) {
 function createNewEmployee(req, res) {
   const newEmployee = {
     id: data?.employees[data.employees.length - 1]?.id + 1 || 1,
-    firstName: req.body.firstName,
-    lastname: req.body.lastName,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
   };
 
-  if (!newEmployee.firstName || !newEmployee.lastname) {
+  if (!newEmployee.firstname || !newEmployee.lastname) {
     return res.status(400).json({
       message: 'First name and last name are required',
     });
@@ -76,13 +76,14 @@ function deleteEmployee(req, res) {
 }
 
 function getEmployee(req, res) {
+  console.log(req.params, 'req nek');
   const employee = data.employees.find(
-    (employee) => employee.id === +req.body.id
+    (employee) => employee.id === parseInt(req.params.id)
   );
 
   if (!employee)
     return res.status(400).json({
-      message: `Employee ID ${req.body.id} does not exist`,
+      message: `Employee ID ${req.params.id} does not exist`,
     });
 
   res.json(employee);
