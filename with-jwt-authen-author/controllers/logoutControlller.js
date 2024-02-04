@@ -8,7 +8,7 @@ const usersDB = {
 const fsPromises = require('fs').promises;
 const path = require('path');
 
-function handleLogout(req, res) {
+async function handleLogout(req, res) {
   // On Client ALSO NEED TO delete the accessToken
   const cookies = req.cookies;
 
@@ -24,7 +24,8 @@ function handleLogout(req, res) {
   if (!foundedUser) {
     res.clearCookie('refreshToken', {
       httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000,
+      sameSite: 'None',
+      secure: true,
     });
 
     return res.sendStatus(204); // No content to send back
@@ -41,7 +42,11 @@ function handleLogout(req, res) {
     JSON.stringify(usersDB.users)
   ),
 
-  res.clearCookie('refreshToken', {httpOnly: true, maxAge: 24 * 60}) // secure: true, only servers on https
+  res.clearCookie('refreshToken', {
+    httpOnly: true, 
+    sameSite: 'None',
+    secure: true, 
+  }) // secure: true, only servers on https
   res.sendStatus(204);
 }
 
