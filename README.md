@@ -28,5 +28,32 @@
 
 10. Authentication
     Requires 2 routes
+
     - One for registration
     - One for authorize the user after user created an account
+
+11. JWT Auth
+
+- Access Token = Short Time (usually 5 to 10m)
+- Refresh Token = Long Time (a day or even days)
+
+* Best practice for FE applications to store them in memory
+  will be lost when the app closed
+  Do NOT store in local storage or even cookie
+
+* Refresh Token
+
+  - sent as httpOnly cookie
+  - Not accesible via JS
+  - Must have expiry at some point
+  - Issued at Authorization
+  - Client uses to request new Access Token
+  - Verified with enpoint & DB
+  - Must be allowed to expire or logout
+
+* Access Token
+
+  - issued at authorization
+  - Client uses for API Access until expires
+  - Verified with Middleware
+  - New Token issued at Refresh request
