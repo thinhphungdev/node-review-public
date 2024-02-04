@@ -32,7 +32,7 @@
     - One for registration
     - One for authorize the user after user created an account
 
-11. JWT Auth
+11. JWT Authentication
 
 - Access Token = Short Time (usually 5 to 10m)
 - Refresh Token = Long Time (a day or even days)
@@ -57,3 +57,13 @@
   - Client uses for API Access until expires
   - Verified with Middleware
   - New Token issued at Refresh request
+
+12. Authorization | User Roles
+
+- Authentication: is the processs of verifying WHO someone is
+- Authorization: is the process of verifying WHAT RESOURCES a user has ACCESS TO.
+
+- User Roles and Permissions
+  1. Provide different levels of access
+  2. Sent in access token payload
+  3. Verified with middleware
