@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 3500;
 const logEvent = require('./middleware/logEvent');
 const app = express();
 const corsOptions = require('./config/corsOptions');
+const cookieParser = require('cookie-parser');
+const verifyJWT = require('./middleware/verifyJWT');
 
 // custom middleware logger
 app.use((req, res, next) => {
@@ -21,14 +23,19 @@ app.use(express.urlencoded({ extended: true }));
 // build-in middleware for json
 app.use(express.json());
 
+// Middleware for Cookies
+app.use(cookieParser());
+
 // serve static files
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/root'));
-app.use('/', require('./routes/register'));
-app.use('/employees', require('./routes/api/employee'));
 app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
+app.use('/refresh-token', require('./routes/refreshToken'));
+
+app.use(verifyJWT);
+app.use('/employees', require('./routes/api/employee'));
 
 app.all('/*', (req, res) => {
   res.status(404);

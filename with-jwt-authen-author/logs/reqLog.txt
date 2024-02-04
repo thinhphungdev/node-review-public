@@ -75,3 +75,10 @@
 20240204	11:40:37	24aec33b-317a-4371-8666-23ec44aabb27	GET	undefined	/employees
 20240204	11:40:38	731a3047-e3fc-47dc-b1a2-b0588433909d	GET	undefined	/employees
 20240204	11:40:38	08743aa1-ea6e-415d-9c36-54be07fa4fbf	GET	undefined	/employees
+20240204	15:17:18	cc06b285-eaff-495b-a5d7-88d39b75f02d	POST	undefined	/auth/login
+20240204	15:17:20	633c428b-50b0-4c45-b3f1-e121969edf40	POST	undefined	/auth/login
+20240204	15:17:22	5412e961-44a7-4037-97cb-0c3660d030a0	POST	undefined	/auth/login
+20240204	15:18:50	eaee3f60-4ecc-42cd-a951-f21a471552eb	GET	undefined	/refresh
+20240204	15:19:19	a621f0f2-9a39-4cd7-9f71-e47b929f111a	POST	undefined	/auth/login
+20240204	15:19:32	1aa4b340-55a5-4a6f-b2b0-7aaa958a0ba5	GET	undefined	/refresh
+20240204	15:19:37	8365088d-b4f1-448d-9420-206719cccff6	GET	undefined	/refresh-token
