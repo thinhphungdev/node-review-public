@@ -59,12 +59,14 @@ async function handleLogin(req, res) {
     JSON.stringify(usersDB.users)
   );
 
+  // set refresh token in the cookie
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
     sameSite: 'None',
     secure: true,
     maxAge: 24 * 60 * 60 * 1000,
   });
+  // send back the accessToken in the response
   res.json({ accessToken });
 }
 

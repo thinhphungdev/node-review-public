@@ -1,3 +1,4 @@
+// Verify is user have the correct roles to access the API
 const verifyRoles = (...allowedRoles) => {
   return (req, res, next) => {
     if (!req?.roles) return res.sendStatus(401);

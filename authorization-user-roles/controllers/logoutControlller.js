@@ -42,6 +42,7 @@ async function handleLogout(req, res) {
     JSON.stringify(usersDB.users)
   ),
 
+  // Clear the refresh token attached to the cookie
   res.clearCookie('refreshToken', {
     httpOnly: true, 
     sameSite: 'None',

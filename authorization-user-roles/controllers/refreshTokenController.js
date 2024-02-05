@@ -8,6 +8,7 @@ const usersDB = {
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
+// use to generate new accessToken
 function handleRefreshToken(req, res) {
   const cookies = req.cookies;
 
@@ -19,7 +20,7 @@ function handleRefreshToken(req, res) {
     (person) => person.refreshToken === refreshToken
   );
 
-  if (!foundedUser) return res.sendStaus(401); // Unauthorized
+  if (!foundedUser) return res.sendStatus(401); // Unauthorized
 
   // evaluate refreshToken
   jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
