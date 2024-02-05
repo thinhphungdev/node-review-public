@@ -27,9 +27,16 @@ async function handleLogin(req, res) {
 
   if (!matchedPassword) return res.status(401);
 
+  const roles = Object.values(foundedUser.roles);
+
   // create JWT
   const accessToken = jwt.sign(
-    { username: foundedUser.username },
+    {
+      UserInfo: {
+        username: foundedUser.username,
+        roles,
+      },
+    },
     process.env.ACCESS_TOKEN_SECRET,
     { expiresIn: '30s' }
   );

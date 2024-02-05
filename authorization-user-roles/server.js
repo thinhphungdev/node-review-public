@@ -7,7 +7,7 @@ const app = express();
 const corsOptions = require('./config/corsOptions');
 const cookieParser = require('cookie-parser');
 const verifyJWT = require('./middleware/verifyJWT');
-const credentails = require('./middleware/credentials');
+const credentials = require('./middleware/credentials');
 
 // custom middleware logger
 app.use((req, res, next) => {

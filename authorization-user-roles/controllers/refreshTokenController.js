@@ -28,9 +28,16 @@ function handleRefreshToken(req, res) {
       return res.sendStatus(403);
     }
 
+    const roles = Object.values(foundedUser.roles);
+
     // Otherwise, issue new access token
     const accessToken = jwt.sign(
-      { username: decoded.username },
+      {
+        UserInfo: {
+          username: decoded.username,
+          roles,
+        },
+      },
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: '30s' }
     );
