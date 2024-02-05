@@ -3,13 +3,15 @@ const verifyRoles = (...allowedRoles) => {
     if (!req?.roles) return res.sendStatus(401);
 
     const allowedRolesArr = [...allowedRoles];
-    console.log(roles, 'Roles nek');
+    console.log(allowedRolesArr, 'allowed');
 
-    const result = req.roles
-      .map((role) => allowedRolesArr.inclues(role))
-      .find((value) => value === true);
+    const result = allowedRolesArr.some((role) => req.roles.includes(role));
 
-    if (!result) return res.sendStatus(401);
+    if (!result) {
+      return res
+        .status(401)
+        .json({ message: 'this user is not allowed to perform this action' });
+    }
 
     next();
   };
